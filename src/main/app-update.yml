@@ -1,0 +1,12 @@
+# 正式更新
+
+# 在dev-update.yml中配置检查更新的地址(全量更新) electron-builder会根据本地version和服务器yml文件version匹配
+# 如果远程包更新，则拉取后自动安装
+# 这个地址为正式环境下的更新地址
+# 需要放入根目录才能打包运行
+# channel: 检查更新的渠道 beta | latest",
+# url: 服务器地址
+# provider： 默认参数
+provider: 'generic'
+url: 'your server exe/dmg url'
+channel: 'latest'
