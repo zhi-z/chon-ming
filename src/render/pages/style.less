@@ -1,0 +1,65 @@
+@import '~antd/es/style/themes/default.less';
+
+@info-color:#C7C9CC;
+
+.body {
+  //backgroundColor:'#000',width:'100%',height:'100%'
+  background-color: #1E1E1E;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.contain {
+  flex: 1;
+  display: flex;
+  //align-items: center;
+  //justify-content: center;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.title {
+  flex: 1;
+  font-size: 30px;
+  color: #CCCCCC;
+}
+.describe {
+  flex: 1;
+  font-size: 20px;
+  color: #989898;
+}
+
+.subtitle {
+  margin-top: 4%;
+  font-size: 16px;
+  color:@info-color;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 16px;
+  margin: 0;
+  padding: 0;
+  height: 24px;
+}
+
+.recent {
+  //display:"flex",flexDirection:"row",alignItems:"center"
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.recentpath {
+  //color:'#C7C9CC',display:"flex",alignItems:"center",height:'100%',marginLeft:50
+  color: @info-color;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}

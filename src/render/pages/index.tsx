@@ -7,6 +7,9 @@ const Store = require('electron-store')
 const store = new Store()
 const fs = require('fs')
 const BrowserWindow = require('electron').remote.BrowserWindow
+// @ts-ignore
+import style from '@/pages/style.less'
+
 
 export default function () {
   const getLocalStoreData = () => {
@@ -16,7 +19,7 @@ export default function () {
   /*
   * nodejs使用，与electron使用
   * */
-  var onClickEvent = () =>{
+  let onClickEvent = () =>{
     /**
      * nodejs模块使用
      */
@@ -26,15 +29,73 @@ export default function () {
     /**
      * electron使用，创建一个新的窗口
      */
-    var win = new BrowserWindow({
+    let win = new BrowserWindow({
       width:300,
       height:400
     })
   }
 
+  let onClickEventRecent = (index: number) =>{
+    console.log(index)
+    console.log(recent[index])
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let onClickEventNew = (e) =>{
+    console.log('新建')
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let onClickEventOpen = (e) =>{
+    console.log('打开')
+  }
+
+  const recent = [
+    {name:'demo1',path:'d:/views/demo1'},
+    {name:'demo2',path:'d:/views/demo2'},
+    {name:'demo3',path:'d:/views/demo3'},
+    {name:'demo2',path:'d:/views/demo2'},
+    {name:'demo3',path:'d:/views/demo3'},
+    {name:'demo2',path:'d:/views/demo2'},
+    {name:'demo3',path:'d:/views/demo3'},
+    {name:'demo4',path:'d:/views/demo4'}
+  ]
+
   return (
-    <div style={{backgroundColor:'#000',width:'100%',height:'100%'}}>
-      <button onClick={onClickEvent}>nodejs与electron使用</button>
+    <div className={style.body}>
+      <div className={style.contain}>
+        <div className={style.item}>
+          <div className={style.title}>Chonming Tool</div>
+          <div className={style.describe}>智能屏开发工具</div>
+        </div>
+        <div className={style.subtitle}>开始</div>
+        <div className={style.item}>
+          <Button onClick={onClickEventNew} type="link" block className={style.btn}>
+            新建
+          </Button>
+          <Button onClick={onClickEventOpen} type="link" block className={style.btn}>
+            打开
+          </Button>
+        </div>
+        <div className={style.subtitle}>最近...</div>
+        <div className={style.item}>
+          {
+            recent.map((item, index) => {
+            return (
+              <div key={index} className={style.recent}>
+                <Button onClick={(e)=>{onClickEventRecent(index)}} type="link" block className={style.btn}>
+                  {item.name}
+                </Button>
+                <div className={style.recentpath}>
+                  {item.path}
+                </div>
+              </div>
+            )
+          })
+          }
+        </div>
+      </div>
+      <div className={style.contain}></div>
+      {/* <button onClick={onClickEvent}>nodejs与electron使用</button> */}
     </div>
   )
 }
