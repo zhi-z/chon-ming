@@ -36,6 +36,7 @@ module.exports = class AppMainWindow extends BrowserWindow {
     super(config)
     this.mainWindow = this
     this.browserView = null
+    this.mainWindow.setMenuBarVisibility(false)
     this.initMainWindow()
     this.initEvents()
   }

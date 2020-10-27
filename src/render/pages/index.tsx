@@ -9,7 +9,7 @@ const fs = require('fs')
 const BrowserWindow = require('electron').remote.BrowserWindow
 // @ts-ignore
 import style from '@/pages/style.less'
-
+import { history } from 'umi';
 
 export default function () {
   const getLocalStoreData = () => {
@@ -47,6 +47,7 @@ export default function () {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let onClickEventOpen = (e) =>{
     console.log('打开')
+    // history.push('/Home/Edge');
   }
 
   const recent = [
