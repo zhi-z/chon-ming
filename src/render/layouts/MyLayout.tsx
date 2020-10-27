@@ -6,7 +6,7 @@ import {Helmet, HelmetProvider} from "react-helmet-async";
 
 
 const BasicLayout = (props) => {
-  // console.log(props)
+  console.log(props)
 
   // const {
   //   settings,

@@ -40,12 +40,12 @@ export default function () {
     console.log(recent[index])
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let onClickEventNew = (e) =>{
+    console.log(e)
     console.log('新建')
   }
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let onClickEventOpen = (e) =>{
+    console.log(e)
     console.log('打开')
     // history.push('/Home/Edge');
   }
